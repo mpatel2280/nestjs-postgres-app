@@ -1,3 +1,11 @@
+echo "# nestjs-postgres-app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/mpatel2280/nestjs-postgres-app.git
+git push -u origin master
+
 # connect postgres to nestjs app
 docker exec -it nest_postgres bash
 psql -U nestuser -d nestdb
