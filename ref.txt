@@ -41,3 +41,12 @@ GET http://localhost:3000/users
         "email": "manish1@example.com"
     }
 ]
+
+
+GET http://localhost:3000/users/1
+
+{
+    "id": 1,
+    "name": "Manish1",
+    "email": "manish1@example.com"
+}
