@@ -1,0 +1,35 @@
+# connect postgres to nestjs app
+docker exec -it nest_postgres bash
+psql -U nestuser -d nestdb
+
+
+curl -X POST http://localhost:3000/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Manish",
+    "email": "manish@example.com"
+  }'
+
+
+nestdb=# select * from "user";
+ id |  name   |        email        
+----+---------+---------------------
+  1 | Manish  | manish@example.com
+  2 | Manish1 | manish1@example.com
+(2 rows)
+
+
+GET http://localhost:3000/users
+
+[
+    {
+        "id": 1,
+        "name": "Manish",
+        "email": "manish@example.com"
+    },
+    {
+        "id": 2,
+        "name": "Manish1",
+        "email": "manish1@example.com"
+    }
+]
